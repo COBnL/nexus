@@ -30,7 +30,10 @@ if [ "$1" = 'bin/nexus' ]; then
 
   mkdir -p "${NEXUS_DATA}/etc" "${NEXUS_DATA}/log" "${NEXUS_DATA}/tmp" "${SONATYPE_WORK}"
   ln -s "${NEXUS_DATA}" "${SONATYPE_WORK}/nexus3"
-  chown -R nexus "${NEXUS_DATA}" "${SONATYPE_WORK}"
+  chown -R nexus "${NEXUS_DATA}" "${SONATYPE_WORK}" "${NEXUS_PLUGINS}"
+  #chown nexus:nexus -R
+  #find "${SONATYPE_WORK}" -not -user nexus -execdir chown nexus {} \+
+  #find "${NEXUS_DATA}" -not -user nexus -execdir chown nexus {} \+
   exec su-exec nexus "$@"
 
 fi
