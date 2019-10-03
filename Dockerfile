@@ -3,7 +3,7 @@ FROM alpine:3.9
 LABEL maintainer="cavemandaveman <cavemandaveman@protonmail.com>"
 
 ENV SONATYPE_DIR="/opt/sonatype"
-ENV NEXUS_VERSION="3.18.1-01" \
+ENV NEXUS_VERSION="3.19.0-01" \
     NEXUS_DATA="/nexus-data" \
     NEXUS_HOME="${SONATYPE_DIR}/nexus" \
     SONATYPE_WORK="${SONATYPE_DIR}/sonatype-work" \
